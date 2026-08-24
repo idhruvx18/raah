@@ -10,14 +10,13 @@ function Reveal({ children, delay = 0 }) {
   )
 }
 
-// Placeholder team — replace with real members
 const TEAM = [
-  { initials: 'T1', role: 'Team Lead', area: 'AI & Perception', skills: ['YOLO', 'PyTorch', 'Computer Vision'] },
-  { initials: 'T2', role: 'Software Engineer', area: 'Path Planning', skills: ['Hybrid A*', 'ROS', 'C++'] },
-  { initials: 'T3', role: 'Software Engineer', area: 'Risk Engine', skills: ['Python', 'Control Systems', 'FastAPI'] },
-  { initials: 'T4', role: 'Software Engineer', area: 'Frontend & UX', skills: ['React', 'Canvas API', 'Tailwind'] },
-  { initials: 'T5', role: 'Research', area: 'Simulation', skills: ['CARLA', 'Unreal Engine', 'Data Analysis'] },
-  { initials: 'T6', role: 'Research', area: 'Object Tracking', skills: ['ByteTrack', 'Kalman Filter', 'Python'] },
+  { name: 'Dhruv Sharma',     initials: 'DS' },
+  { name: 'Manan Saini',      initials: 'MS' },
+  { name: 'Vanshika Sharma',  initials: 'VS' },
+  { name: 'Siya Chaudhary',   initials: 'SC' },
+  { name: 'Dhruv Talan',      initials: 'DT' },
+  { name: 'Devansh Tyagi',    initials: 'DY' },
 ]
 
 const VALUES = [
@@ -49,26 +48,16 @@ export default function Team() {
           <h2 className="text-xl font-medium text-raah-heading mb-6">Team Members</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-px bg-raah-border">
             {TEAM.map((member, i) => (
-              <Reveal key={member.initials} delay={i * 70}>
-                <div className="bg-raah-bg p-6">
-                  {/* Avatar */}
+              <Reveal key={member.name} delay={i * 70}>
+                <div className="bg-raah-bg p-6 flex flex-col items-start">
                   <div className="w-10 h-10 rounded-full bg-raah-surface border border-raah-border flex items-center justify-center mb-4">
                     <span className="text-xs font-semibold text-raah-muted">{member.initials}</span>
                   </div>
-                  <p className="text-xs font-medium text-raah-heading mb-0.5">{member.role}</p>
-                  <p className="text-[10px] text-raah-accent mb-3 tracking-[.04em]">{member.area}</p>
-                  <div className="flex flex-wrap gap-1">
-                    {member.skills.map((s) => (
-                      <span key={s} className="text-[9px] px-1.5 py-0.5 bg-raah-surface border border-raah-border rounded-sm text-raah-muted">
-                        {s}
-                      </span>
-                    ))}
-                  </div>
+                  <p className="text-sm font-medium text-raah-heading leading-snug">{member.name}</p>
                 </div>
               </Reveal>
             ))}
           </div>
-          <p className="text-xs text-raah-muted mt-3">Team member names intentionally omitted — replace with actual team information.</p>
         </Reveal>
 
         {/* Values */}
