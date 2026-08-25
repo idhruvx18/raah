@@ -265,6 +265,19 @@ export const useSimStore = create(
           addEvent({ type: 'injection', message: 'Static roadblock injected', severity: 'danger' })
           break
         }
+        case 'pothole': {
+          addObject({
+            id, type: OBJECT_TYPES.OBSTACLE,
+            x: cx + 10, y: cy + 40,
+            vx: 0, vy: 0,
+            heading: 0,
+            confidence: 0.91,
+            label: 'POTHOLE',
+            distance: 14,
+          })
+          addEvent({ type: 'injection', message: 'Pothole detected on road', severity: 'warn' })
+          break
+        }
         case 'vehicle_merge': {
           addObject({
             id, type: OBJECT_TYPES.VEHICLE,

@@ -15,6 +15,7 @@ const INJECT_ACTIONS = [
   { id: 'pedestrian',       label: 'Pedestrian Crossing' },
   { id: 'animal',           label: 'Animal' },
   { id: 'roadblock',        label: 'Roadblock' },
+  { id: 'pothole',          label: 'Pothole' },
   { id: 'vehicle_merge',    label: 'Vehicle Merge' },
 ]
 
